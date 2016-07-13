@@ -1,6 +1,6 @@
 {
   "name": "download-tarball",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download a tarball (optionally gzipped) to a folder & extract it in the process. Uses the wonderful & super quick tar-fs & gunzip-maybe libraries.",
   "main": "dist/index.js",
   "scripts": {
