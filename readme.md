@@ -64,9 +64,9 @@ npm test
 ## Dependencies
 
 - [bluebird](https://github.com/petkaantonov/bluebird): Full featured Promises/A+ implementation with exceptionally good performance
-- [end-of-stream](https://github.com/mafintosh/end-of-stream): Call a callback when a readable/writable/duplex stream has completed or failed.
 - [got](https://github.com/sindresorhus/got): Simplified HTTP requests
 - [gunzip-maybe](https://github.com/mafintosh/gunzip-maybe): Transform stream that gunzips its input if it is gzipped and just echoes it if not
+- [pump](https://github.com/mafintosh/pump): pipe streams together and close all of them if one of them closes
 - [tar-fs](https://github.com/mafintosh/tar-fs): filesystem bindings for tar-stream
 
 ## Dev Dependencies
