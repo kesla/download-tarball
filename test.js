@@ -28,7 +28,7 @@ test('downloadTarball()', function * (t) {
   });
   const {name: tmpDir} = tmp.dirSync();
 
-  yield download({
+  const d = download({
     url,
     gotOpts: {
       headers: {
@@ -37,6 +37,10 @@ test('downloadTarball()', function * (t) {
     },
     dir: tmpDir
   });
+
+  t.truthy(d.then, 'answer is promise');
+
+  yield d;
   const actualContent = yield fs.readFile(join(tmpDir, 'test.txt'), 'utf8');
   const expectedContent = 'this is the test file';
   t.is(actualContent, expectedContent);
