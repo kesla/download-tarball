@@ -4,7 +4,7 @@
   "description": "Download a tarball (optionally gzipped) to a folder & extract it in the process. Uses the wonderful & super quick tar-fs & gunzip-maybe libraries.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "babel-tape-runner test.js && semistandard | snazzy",
+    "test": "xo && babel-tape-runner test.js",
     "build": "rm -rf dist && mkdir -p dist && babel lib --out-dir dist",
     "watch": "rm -rf dist && mkdir -p dist && babel -w lib --out-dir dist",
     "prepublish": "npm run build",
@@ -27,12 +27,11 @@
     "babel-tape-runner": "^2.0.1",
     "http-test-server": "^1.0.0",
     "package-json-to-readme": "^1.5.1",
-    "semistandard": "^8.0.0",
-    "snazzy": "^4.0.0",
     "tapava": "^2.2.0",
     "tar-stream": "^1.5.2",
     "then-fs": "^2.0.0",
-    "tmp": "0.0.28"
+    "tmp": "0.0.28",
+    "xo": "^0.16.0"
   },
   "dependencies": {
     "bluebird": "^3.4.1",
@@ -42,5 +41,9 @@
     "object-assign": "^4.1.0",
     "pump": "^1.0.1",
     "tar-fs": "^1.13.0"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true
   }
 }

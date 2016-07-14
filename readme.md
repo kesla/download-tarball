@@ -13,6 +13,8 @@ npm install download-tarball --save
 ## Usage
 
 ```js
+/* eslint-disable import/no-extraneous-dependencies */
+
 import download from 'download-tarball';
 
 download({
@@ -66,6 +68,8 @@ npm test
 - [bluebird](https://github.com/petkaantonov/bluebird): Full featured Promises/A+ implementation with exceptionally good performance
 - [got](https://github.com/sindresorhus/got): Simplified HTTP requests
 - [gunzip-maybe](https://github.com/mafintosh/gunzip-maybe): Transform stream that gunzips its input if it is gzipped and just echoes it if not
+- [http-https-agent](https://github.com/kesla/http-https-agent): Get either a HTTP or HTTPS agent depending on protocol
+- [object-assign](https://github.com/sindresorhus/object-assign): ES2015 Object.assign() ponyfill
 - [pump](https://github.com/mafintosh/pump): pipe streams together and close all of them if one of them closes
 - [tar-fs](https://github.com/mafintosh/tar-fs): filesystem bindings for tar-stream
 
@@ -75,13 +79,13 @@ npm test
 - [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
 - [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
 - [babel-tape-runner](https://github.com/wavded/babel-tape-runner): Babel + Tape for running your ES Next tests
+- [http-test-server](https://github.com/kesla/test-http-server): Create a simple http server for tests
 - [package-json-to-readme](https://github.com/zeke/package-json-to-readme): Generate a README.md from package.json contents
-- [semistandard](https://github.com/Flet/semistandard): All the goodness of `feross/standard` with semicolons sprinkled on top.
-- [snazzy](https://github.com/feross/snazzy): Format JavaScript Standard Style as Stylish (i.e. snazzy) output
 - [tapava](https://github.com/kesla/tapava): the syntax of ava, run through tape
 - [tar-stream](https://github.com/mafintosh/tar-stream): tar-stream is a streaming tar parser and generator and nothing else. It is streams2 and operates purely using streams which means you can easily extract/parse tarballs without ever hitting the file system.
 - [then-fs](https://github.com/then/fs): promised FS
 - [tmp](https://github.com/raszi/node-tmp): Temporary file and directory creator
+- [xo](https://github.com/sindresorhus/xo): JavaScript happiness style linter ❤️
 
 
 ## License
