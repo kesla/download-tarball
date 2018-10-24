@@ -67,8 +67,7 @@ npm test
 
 - [got](https://github.com/sindresorhus/got): Simplified HTTP requests
 - [gunzip-maybe](https://github.com/mafintosh/gunzip-maybe): Transform stream that gunzips its input if it is gzipped and just echoes it if not
-- [http-https-agent](https://github.com/kesla/http-https-agent): Get either a HTTP or HTTPS agent depending on protocol
-- [object-assign](https://github.com/sindresorhus/object-assign): ES2015 Object.assign() ponyfill
+- [object-assign](https://github.com/sindresorhus/object-assign): ES2015 `Object.assign()` ponyfill
 - [promisify-function](https://github.com/jcollado/promisify-function): Turn a callback-style function into a function that returns a promise
 - [pump](https://github.com/mafintosh/pump): pipe streams together and close all of them if one of them closes
 - [tar-fs](https://github.com/mafintosh/tar-fs): filesystem bindings for tar-stream
