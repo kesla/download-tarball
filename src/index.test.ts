@@ -1,16 +1,18 @@
 import {join} from 'path';
 
 import {pack} from 'tar-stream';
+// @ts-expect-error
 import tmp from 'tmp';
-import test from 'tapava';
-import fs from 'then-fs';
+
+import fs from 'fs/promises';
+// @ts-expect-error
 import setupServer from 'http-test-server';
 
-import download from './lib';
+import download from '../dist/index.js';
 
-test('downloadTarball()', function * (t) {
-  const {baseUrl, shutdown} = yield setupServer((req, res) => {
-    t.match(req.headers, {custom: 'beep-boop'});
+test('downloadTarball()', async function () {
+  const {baseUrl, shutdown} = await setupServer((req: any, res:any) => {
+    expect(req.headers).toEqual(expect.objectContaining({custom: 'beep-boop'}));
 
     // only testing tar here since we're using gunzip-maybe that handles gzip
     const packStream = pack();
@@ -31,11 +33,13 @@ test('downloadTarball()', function * (t) {
     dir: tmpDir
   });
 
-  t.truthy(d.then, 'answer is promise');
+  expect(d.then).toBeTruthy();
 
-  yield d;
-  const actualContent = yield fs.readFile(join(tmpDir, 'test.txt'), 'utf8');
+  await d;
+
+
+  const actualContent = await fs.readFile(join(tmpDir, 'test.txt'), 'utf8');
   const expectedContent = 'this is the test file';
-  t.is(actualContent, expectedContent);
-  yield shutdown();
+  expect(actualContent).toBe(expectedContent);
+  await shutdown();
 });

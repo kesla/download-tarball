@@ -1,12 +1,14 @@
 {
   "name": "download-tarball",
   "version": "2.0.0",
-  "description": "Download a tarball (optionally gzipped) to a folder & extract it in the process. Uses the wonderful & super quick tar-fs & gunzip-maybe libraries.",
+  "description": "Download a tarball (optionally gzipped) to a folder & extract it in the process. Uses the wonderful & super quick tar-fs & gunzip-maybe srcraries.",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "xo && babel-tape-runner test.js",
-    "build": "rm -rf dist && mkdir -p dist && babel lib --out-dir dist",
-    "watch": "rm -rf dist && mkdir -p dist && babel -w lib --out-dir dist",
+    "test": "jest",
+    "build": "tsup ./src/index.ts --clean --dts --format cjs,esm --target node16 --external tar-fs,gunzip-maybe,pump",
+    "watch": "yarn build -- --watch",
     "prepublish": "npm run build",
     "posttest": "readme package.json > readme.md"
   },
@@ -21,28 +23,24 @@
   },
   "homepage": "https://github.com/kesla/download-tarball#readme",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.10.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-tape-runner": "^2.0.1",
-    "http-test-server": "^1.0.0",
-    "package-json-to-readme": "^1.5.1",
-    "tapava": "^2.2.0",
-    "tar-stream": "^1.5.2",
-    "then-fs": "^2.0.0",
-    "tmp": "0.0.29",
-    "xo": "^0.16.0"
+    "@types/gunzip-maybe": "^1.4.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^16.0.0",
+    "@types/pump": "^1.1.1",
+    "@types/tar-fs": "^2.0.1",
+    "http-test-server": "^2.0.1",
+    "jest": "^29.4.3",
+    "package-json-to-readme": "^2.1.1",
+    "tar-stream": "^3.0.0",
+    "tmp": "^0.2.1",
+    "ts-jest": "^29.0.5",
+    "tsup": "^6.6.3",
+    "got": "^12.5.3",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "got": "^8.3.2",
-    "gunzip-maybe": "^1.3.1",
-    "object-assign": "^4.1.0",
-    "promisify-function": "^1.3.2",
-    "pump": "^1.0.1",
-    "tar-fs": "^1.13.0"
-  },
-  "xo": {
-    "esnext": true,
-    "space": true
+    "gunzip-maybe": "^1.4.2",
+    "pump": "^3.0.0",
+    "tar-fs": "^2.1.1"
   }
 }
