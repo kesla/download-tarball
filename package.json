@@ -6,6 +6,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
+    "release": "auto shipit",
     "test": "jest",
     "build": "tsup ./src/index.ts --clean --dts --format cjs,esm --target node16 --external tar-fs,gunzip-maybe,pump",
     "watch": "yarn build -- --watch",
@@ -14,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kesla/download-tarball.git"
+    "url": "git+https://github.com/ndelangen/download-tarball.git"
   },
   "author": "David Björklund <david.bjorklund@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kesla/download-tarball/issues"
+    "url": "https://github.com/ndelangen/download-tarball/issues"
   },
-  "homepage": "https://github.com/kesla/download-tarball#readme",
+  "homepage": "https://github.com/ndelangen/download-tarball#readme",
   "devDependencies": {
     "@types/gunzip-maybe": "^1.4.0",
     "@types/jest": "^29.4.0",
