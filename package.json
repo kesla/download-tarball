@@ -1,5 +1,5 @@
 {
-  "name": "@ndelangendownload-tarball",
+  "name": "@ndelangen/download-tarball",
   "version": "3.0.1",
   "description": "Download a tarball (optionally gzipped) to a folder & extract it in the process. Uses the wonderful & super quick tar-fs & gunzip-maybe srcraries.",
   "main": "dist/index.js",
