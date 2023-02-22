@@ -1,3 +1,9 @@
 node_modules
 .nyc_output
 coverage
+.github
+.env
+*.lock
+example.ts
+jest.config.js
+src
