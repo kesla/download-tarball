@@ -1,5 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
+// @ts-expect-error (this is an example)
 import download from 'download-tarball';
 
 download({
