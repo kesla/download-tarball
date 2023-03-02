@@ -1,5 +1,6 @@
 import {join} from 'path';
 
+// @ts-expect-error
 import {pack} from 'tar-stream';
 // @ts-expect-error
 import tmp from 'tmp';
